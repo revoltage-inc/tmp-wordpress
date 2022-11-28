@@ -1,0 +1,7 @@
+html {
+  visibility: hidden;
+
+  &.wf-active {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,69 @@
+#tinymce {
+  box-sizing: border-box;
+  margin: 3em;
+
+  & .wp-block-group {
+    margin-bottom: 36px;
+  }
+
+  & .wp-block-image {
+    margin-bottom: 36px;
+  }
+
+  & figcaption {
+    line-height: 1.75;
+    text-align: center;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 0.5em 1em;
+  }
+
+  & .wp-block-embed {
+    margin-bottom: 2em;
+
+    & > div {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 56.25%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  & .iframe-content {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  & .screen-reader-text {
+    border: 0;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+  }
+}

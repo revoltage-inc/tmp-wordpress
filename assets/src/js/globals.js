@@ -1,0 +1,6 @@
+import './lib/modernizr'
+import './custom/viewport'
+import './custom/modal'
+import './custom/scroll'
+// import './custom/web-font'
+// import './custom/fadein'

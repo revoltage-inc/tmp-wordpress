@@ -1,0 +1,16 @@
+# System File
+.DS_Store
+__MACOSX
+Thumbs.db
+
+# Node.js
+node_modules/
+
+# dist
+assets/dist/
+
+# VSCode Plugin
+.history/
+
+# TailwindCSS
+assets/src/css/lib/tailwind.css

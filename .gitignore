@@ -1,0 +1,16 @@
+# System File
+.DS_Store
+__MACOSX
+Thumbs.db
+
+# Node.js
+node_modules/
+
+# npm
+.npm/
+
+# dist
+assets/dist/
+
+# VSCode Plugin
+.history

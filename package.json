@@ -1,0 +1,81 @@
+{
+  "name": "tmp-wordpress",
+  "version": "2.6.6",
+  "description": "Template for WordPress Theme",
+  "author": "@yogarasu",
+  "license": "MIT",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:tw": "tailwindcss -i ./assets/src/css/lib/tailwind.css -o ./assets/dist/css/lib/tailwind.css --postcss --minify",
+    "build:css": "npm run lint && postcss assets/src/css/*.css -d assets/dist/css/ --config postcss.config.js && postcss assets/src/css/lib/*.css -d assets/dist/css/lib/ --config postcss.config.js && postcss assets/src/css/admin/*.css -d assets/dist/css/admin/ --config postcss.config.js && postcss assets/src/css/pages/*.css -d assets/dist/css/pages/ --config postcss.config.js && npm run build:tw",
+    "build:font": "node cli/font.mjs --src assets/src/font --dist assets/dist/font",
+    "build:svg": "node cli/copy.mjs --src assets/src/svg --dist assets/dist/svg",
+    "build:img": "node cli/sharp.mjs --src assets/src/img --dist assets/dist/img",
+    "build:js": "vite build --config vite.config.js --minify",
+    "watch": "run-p watch:*",
+    "watch:tw": "chokidar \"{index,header,footer,404}.php\" \"{pages,components,singles,archives}/**/*.php\" --command \"npm run build:tw\" --initial",
+    "watch:css": "chokidar \"assets/src/css/**/*.css\" --command \"npm run build:css\" --initial",
+    "watch:font": "chokidar \"assets/src/font/**/*.{woff,woff2,ttf,otf}\" --command \"npm run build:font\" --initial",
+    "watch:svg": "chokidar \"assets/src/svg/**/*.svg\" --command \"npm run build:svg\" --initial",
+    "watch:img": "chokidar \"assets/src/img/**/*.{jpg,jpeg,png,avif}\" --command \"npm run build:img\" --initial",
+    "watch:js": "chokidar \"assets/src/js/**/*.js\" --command \"npm run build:js\" --initial",
+    "lint": "stylelint assets/src/css/**/*.css --fix --config stylelint.config.js",
+    "modernizr": "node cli/modernizr.mjs --dist assets/src/js/lib",
+    "update": "npx ncu -u && npm install"
+  },
+  "dependencies": {
+    "swiper": "^8.4.5",
+    "vanilla-autokana": "^1.3.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "autoprefixer": "^10.4.13",
+    "chokidar-cli": "^3.0.0",
+    "commander": "^9.4.1",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-tailwindcss": "^3.7.0",
+    "modernizr": "^3.12.0",
+    "npm-check-updates": "^16.4.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^15.0.0",
+    "postcss-inline-svg": "^5.0.0",
+    "postcss-preset-env": "^7.8.3",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0",
+    "rollup-plugin-multi-input": "^1.3.1",
+    "sharp": "^0.31.2",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-order": "^5.0.0",
+    "subset-font": "^1.6.1",
+    "tailwindcss": "^3.2.4",
+    "tiny-glob": "^0.2.9",
+    "vite": "^3.2.4"
+  },
+  "overrides": {
+    "css-what": "^5.0.1",
+    "got": "^11.8.5",
+    "glob-parent": "^6.0.1"
+  },
+  "volta": {
+    "node": "18.12.1",
+    "npm": "9.1.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "keywords": [
+    "tmp-wordpress",
+    "wp",
+    "wordpress",
+    "tailwindcss"
+  ]
+}

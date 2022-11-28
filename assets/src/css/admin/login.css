@@ -1,0 +1,82 @@
+#login {
+  & h1 {
+    & a {
+      background-image: url('../../img/common/logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      max-width: 280px;
+
+      @nest .webp & {
+        background-image: url('../../img/common/logo.webp');
+      }
+
+      @nest .avif & {
+        background-image: url('../../img/common/logo.avif');
+      }
+    }
+  }
+
+  & #backtoblog {
+    display: none !important;
+  }
+
+  & .privacy-policy-page-link {
+    display: none !important;
+  }
+
+  /* ログインフォーム */
+  & #loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 4px;
+
+    & .forgetmenot {
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    & .submit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      & #wp-submit {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+
+  /* ログインパスワードフォーム */
+  & #lostpasswordform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 4px;
+
+    & .submit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      & #wp-submit {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+
+.language-switcher {
+  display: none !important;
+}
