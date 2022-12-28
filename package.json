@@ -57,7 +57,7 @@
     "subset-font": "^2.0.0",
     "tailwindcss": "^3.2.4",
     "tiny-glob": "^0.2.9",
-    "vite": "^4.0.2"
+    "vite": "^4.0.3"
   },
   "overrides": {
     "css-what": "^5.0.1",
