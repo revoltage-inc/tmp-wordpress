@@ -7,12 +7,12 @@
 add_action('wp_footer', function () {
   // All page
   wp_enqueue_script(
-    'globals',
-    get_theme_file_uri('/assets/dist/js/globals.js'),
+    'global',
+    get_theme_file_uri('/assets/dist/js/global.js'),
     [],
     date_i18n(
       'YmdHis',
-      filemtime(get_theme_file_path('/assets/dist/js/globals.js'))
+      filemtime(get_theme_file_path('/assets/dist/js/global.js'))
     )
   );
 
@@ -81,7 +81,7 @@ add_action('login_enqueue_scripts', function () {
 
 // ESMを使うときは、scriptタグのtype属性をmoduleに書き換える
 add_filter('script_loader_tag', function ($tag, $handle, $src) {
-  if (in_array($handle, ['globals', 'page-top', 'page-contact'])) {
+  if (in_array($handle, ['global', 'page-top', 'page-contact'])) {
     $tag = str_replace('text/javascript', 'module', $tag);
   }
   return $tag;
