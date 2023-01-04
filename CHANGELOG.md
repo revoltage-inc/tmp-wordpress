@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.2...v1.0.3) (2023-01-04)
+
+
+### Bug Fixes
+
+* 35 json5の脆弱性のあるバージョンをオーバーライドするように修正 ([d3405c1](https://github.com/revoltage-inc/tmp-wordpress/commit/d3405c10544b1c7440add7ebb3a2cc0354092767))
+
 ## [1.0.2](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.1...v1.0.2) (2023-01-04)
 
 
