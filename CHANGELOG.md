@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.3...v1.0.4) (2023-01-16)
+
+
+### Bug Fixes
+
+* 44 dependabotのPRを自動マージするワークフローを追加 ([f2feccd](https://github.com/revoltage-inc/tmp-wordpress/commit/f2feccd674c460da6f33a9f4e61a70832082c564))
+* 44 パッケージを更新 ([d599400](https://github.com/revoltage-inc/tmp-wordpress/commit/d5994005682f97aba95cc6f9a9d4f85151aa6848))
+
 ## [1.0.3](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.2...v1.0.3) (2023-01-04)
 
 
