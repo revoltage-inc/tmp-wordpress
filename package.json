@@ -33,7 +33,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
     "chokidar-cli": "^3.0.0",
-    "commander": "^9.4.1",
+    "commander": "^10.0.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-tailwindcss": "^3.8.0",
