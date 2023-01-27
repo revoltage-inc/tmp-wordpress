@@ -27,10 +27,14 @@ function the_pagination() {
 }
 
 // Load component file with shortcode
-add_shortcode('component', function ($params = []) {
-  extract(shortcode_atts(['file' => 'default'], $params));
+add_shortcode('component', function ($atts = []) {
+  extract(shortcode_atts(['file' => null], $atts));
   ob_start();
-  include(STYLESHEETPATH . "/components/{$file}.php");
+  if ($file) {
+    include(get_theme_file_path("components/$file.php"));
+  } else {
+    throw new Exception('Not found component file');
+  }
   return ob_get_clean();
 });
 
