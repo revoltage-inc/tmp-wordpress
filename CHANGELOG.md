@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.4...v1.0.5) (2023-01-27)
+
+
+### Bug Fixes
+
+* 57 ショートコードのコンポーネントが読み込めない問題を修正 ([78576a6](https://github.com/revoltage-inc/tmp-wordpress/commit/78576a6849578da632840995f8441a1ad5dea0fa))
+* 57 パッケージを更新 ([87ebceb](https://github.com/revoltage-inc/tmp-wordpress/commit/87ebceb8631af6e596c056cede1ce6f61d09e190))
+
 ## [1.0.4](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.3...v1.0.4) (2023-01-16)
 
 
