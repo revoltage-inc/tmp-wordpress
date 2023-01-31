@@ -64,7 +64,7 @@ Or install the free plugin with WP CLI.
 | [all-in-one-wp-migration](https://ja.wordpress.org/plugins/all-in-one-wp-migration/) | required | Site backup and restore |  |
 | [contact-form-7](https://ja.wordpress.org/plugins/contact-form-7/) | required | Create contact form |  |
 | [contact-form-7-honeypot](https://ja.wordpress.org/plugins/contact-form-7-honeypot/) | required | Spam prevention for ContactForm7 |  |
-| [duplicate-post](https://ja.wordpress.org/plugins//) | required | Duplicate post |  |
+| [duplicate-post](https://ja.wordpress.org/plugins/duplicate-post/) | required | Duplicate post |  |
 | [flamingo](https://ja.wordpress.org/plugins/flamingo/)| required | ContactForm7 message storage |  |
 | [seo-simple-pack](https://ja.wordpress.org/plugins/seo-simple-pack/) | required | SEO measures |  |
 | [taxonomy-terms-order](https://ja.wordpress.org/plugins/taxonomy-terms-order/) | required | Sort taxonomies |  |
