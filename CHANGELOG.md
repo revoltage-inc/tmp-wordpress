@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.5...v1.0.6) (2023-01-31)
+
+
+### Bug Fixes
+
+* Duplicate postのリンクを修正 ([a829027](https://github.com/revoltage-inc/tmp-wordpress/commit/a829027f575596bdf8107476c895fdc1874d6ad3))
+* パッケージを更新 ([50d71f6](https://github.com/revoltage-inc/tmp-wordpress/commit/50d71f652a08d73ec61862db930e0d680cabfa0d))
+
 ## [1.0.5](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.4...v1.0.5) (2023-01-27)
 
 
