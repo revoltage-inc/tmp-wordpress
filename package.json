@@ -8,9 +8,9 @@
     "build": "run-p build:*",
     "build:tw": "tailwindcss -i ./assets/src/css/lib/tailwind.css -o ./assets/dist/css/lib/tailwind.css --postcss --minify",
     "build:css": "npm run lint && postcss assets/src/css/*.css -d assets/dist/css/ --config postcss.config.js && postcss assets/src/css/lib/*.css -d assets/dist/css/lib/ --config postcss.config.js && postcss assets/src/css/admin/*.css -d assets/dist/css/admin/ --config postcss.config.js && postcss assets/src/css/pages/*.css -d assets/dist/css/pages/ --config postcss.config.js && npm run build:tw",
-    "build:font": "node cli/font.mjs --src assets/src/font --dist assets/dist/font",
-    "build:svg": "node cli/copy.mjs --src assets/src/svg --dist assets/dist/svg",
-    "build:img": "node cli/sharp.mjs --src assets/src/img --dist assets/dist/img",
+    "build:font": "node scripts/font.mjs --src assets/src/font --dist assets/dist/font",
+    "build:svg": "node scripts/copy.mjs --src assets/src/svg --dist assets/dist/svg",
+    "build:img": "node scripts/sharp.mjs --src assets/src/img --dist assets/dist/img",
     "build:js": "vite build --config vite.config.js --minify",
     "watch": "run-p watch:*",
     "watch:tw": "chokidar \"{index,header,footer,404}.php\" \"{pages,components,singles,archives}/**/*.php\" --command \"npm run build:tw\" --initial",
@@ -20,7 +20,7 @@
     "watch:img": "chokidar \"assets/src/img/**/*.{jpg,jpeg,png,avif}\" --command \"npm run build:img\" --initial",
     "watch:js": "chokidar \"assets/src/js/**/*.js\" --command \"npm run build:js\" --initial",
     "lint": "stylelint assets/src/css/**/*.css --fix --config stylelint.config.js",
-    "modernizr": "node cli/modernizr.mjs --dist assets/src/js/lib",
+    "modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
     "update": "npx ncu -u && npm install"
   },
   "dependencies": {
