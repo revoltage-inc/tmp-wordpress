@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.7](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.6...v1.0.7) (2023-02-18)
+
+
+### Bug Fixes
+
+* 82 パッケージを更新 ([ddc8192](https://github.com/revoltage-inc/tmp-wordpress/commit/ddc819206c32afe44e95bcf6acef1ca5397fe81f))
+* 82 リネーム ([9e294e0](https://github.com/revoltage-inc/tmp-wordpress/commit/9e294e06019acf0df61347fcd83b9edbe87c5cbc))
+
 ## [1.0.6](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.5...v1.0.6) (2023-01-31)
 
 
