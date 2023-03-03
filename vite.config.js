@@ -16,9 +16,10 @@ module.exports = defineConfig({
         assetFileNames: '[name].[ext]',
         format: 'es',
         dir: 'assets/dist/js',
-        manualChunks: {
-          swiper: ['swiper'],
-        },
+        // BUG: Cannot read properties of null error
+        // manualChunks: {
+        //   swiper: ['swiper'],
+        // },
         chunkFileNames: 'lib/[name].js',
       },
       plugins: [
