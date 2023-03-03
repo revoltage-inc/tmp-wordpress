@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.8](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.7...v1.0.8) (2023-03-03)
+
+
+### Bug Fixes
+
+* 96 nodeとnpmをバージョンアップ ([ce08df8](https://github.com/revoltage-inc/tmp-wordpress/commit/ce08df820778dca3a8aa466b49e0b9efd2001f6f))
+* 96 postcss-inline-svgをコメントアウト ([9df7157](https://github.com/revoltage-inc/tmp-wordpress/commit/9df7157ac95263937e98cf0007d0ceb490ff6aa5))
+* 96 Swiperのbundleをパッケージからローカルファイルに変更 ([06a3aec](https://github.com/revoltage-inc/tmp-wordpress/commit/06a3aec27dcb7fd9fddcbfdb631e4d4351fc99bf))
+* 96 Taiwindの設定ファイルに型の注釈をつけるように修正 ([db1a858](https://github.com/revoltage-inc/tmp-wordpress/commit/db1a858738faf2d3b6002636dff24deca1f7fed1))
+* 96 パッケージを更新 ([0ed1552](https://github.com/revoltage-inc/tmp-wordpress/commit/0ed155253c7d95ba691b3a5fddbded5beb915250))
+
 ## [1.0.7](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.6...v1.0.7) (2023-02-18)
 
 
