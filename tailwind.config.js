@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['{index,header,footer,404}.php', '{pages,components,singles,archives}/**/*.php'],
   theme: {

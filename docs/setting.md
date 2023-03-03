@@ -110,7 +110,7 @@ Install and activate on the WP admin screen "Plugins > Add New > Upload Plugin"
 Create environment with following command.  
 
 ```zsh
-volta install node@18.12.1 npm@9.1.2
+volta install node@18.14.2 npm@9.5.0
 
 npm install
 ```
