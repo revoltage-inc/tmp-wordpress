@@ -34,7 +34,7 @@
     "autoprefixer": "^10.4.14",
     "chokidar-cli": "^3.0.0",
     "commander": "^10.0.0",
-    "eslint": "^8.35.0",
+    "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-tailwindcss": "^3.10.1",
     "modernizr": "^3.12.0",
