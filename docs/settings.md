@@ -1,13 +1,5 @@
 # Setting
 
-## Premise
-
-- [Install VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
-- [Install Workspace recommended VSCode extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions)
-- [Install Volta](https://docs.volta.sh/guide/getting-started)
-- [Install direnv](https://github.com/direnv/direnv)
-- [Install Local(Formerly known as Local By Flywheel)](https://localwp.com/)
-
 ## Create site by Local
 
 1. Open the Local App.
