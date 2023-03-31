@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.9](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.8...v1.0.9) (2023-03-31)
+
+
+### Bug Fixes
+
+* 110 READMEを更新 ([466fb61](https://github.com/revoltage-inc/tmp-wordpress/commit/466fb610002da968270d213e05853b2d63970cce))
+* 110 パッケージを更新 ([0334cc7](https://github.com/revoltage-inc/tmp-wordpress/commit/0334cc746ae3d7cb975aa5a6cbd77c8039ba8b6b))
+
 ## [1.0.8](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.7...v1.0.8) (2023-03-03)
 
 
