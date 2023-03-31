@@ -7,10 +7,22 @@ This includes TailwindCSS.
 > This template is still in alpha stage.  
 > Beware destructive changes.  
 
+## Premise
+
+- [Install VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)
+- [Install Workspace recommended VSCode extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions)
+- [Install Volta](https://docs.volta.sh/guide/getting-started)
+- [Install direnv](https://github.com/direnv/direnv)
+- [Install Local(Formerly known as Local By Flywheel)](https://localwp.com/)
+
+## Settings
+
+See [settings.md](./docs/settings.md).
+
 ## Usage
 
-After completing [Setting](./docs/setting.md), build all files with following command.  
-And this repository will be ready to use as WordPress Theme.  
+Build all files with the following command.  
+This repository will be ready for use as a WordPress theme.  
 
 ```zsh
 npm run build
