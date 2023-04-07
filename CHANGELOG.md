@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.9...v1.0.10) (2023-04-07)
+
+
+### Bug Fixes
+
+* 122 @tailwindcss/line-clampを削除 ([13b234a](https://github.com/revoltage-inc/tmp-wordpress/commit/13b234abe48ee400c4b71a86887d5f2ffd91fadd))
+* 122 パッケージを更新 ([e5a52f8](https://github.com/revoltage-inc/tmp-wordpress/commit/e5a52f838c2559ffdf7fe01d53efc4b0d720e29b))
+
 ## [1.0.9](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.8...v1.0.9) (2023-03-31)
 
 
