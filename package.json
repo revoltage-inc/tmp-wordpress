@@ -1,7 +1,7 @@
 {
   "name": "tmp-wordpress",
   "version": "1.0.11",
-  "description": "Template for WordPress Theme",
+  "description": "Template for WordPress theme using Vite, TailwindCSS, etc.",
   "author": "@yogarasu",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,7 @@
     "build:svg": "node scripts/copy.mjs --src assets/src/svg --dist assets/dist/svg",
     "build:img": "node scripts/sharp.mjs --src assets/src/img --dist assets/dist/img",
     "build:js": "vite build --config vite.config.js --minify",
+    "build:modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
     "watch": "run-p watch:*",
     "watch:tw": "chokidar \"{index,header,footer,404}.php\" \"{pages,components,singles,archives}/**/*.php\" --command \"npm run build:tw\" --initial",
     "watch:css": "chokidar \"assets/src/css/**/*.css\" --command \"npm run build:css\" --initial",
@@ -20,26 +21,24 @@
     "watch:img": "chokidar \"assets/src/img/**/*.{jpg,jpeg,png,avif}\" --command \"npm run build:img\" --initial",
     "watch:js": "chokidar \"assets/src/js/**/*.js\" --command \"npm run build:js\" --initial",
     "lint": "stylelint assets/src/css/**/*.css --fix --config stylelint.config.js",
-    "modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
-    "update": "npx ncu -u && npm install"
+    "update": "pnpm -r update --latest --depth 100 && pnpm install --lockfile-only && npm install --package-lock-only"
   },
   "dependencies": {
-    "swiper": "^9.2.0",
+    "swiper": "^9.2.2",
     "vanilla-autokana": "^1.3.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "autoprefixer": "^10.4.14",
     "chokidar-cli": "^3.0.0",
-    "commander": "^10.0.0",
+    "commander": "^10.0.1",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-tailwindcss": "^3.11.0",
     "modernizr": "^3.12.0",
-    "npm-check-updates": "^16.10.8",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.22",
     "postcss-cli": "^10.1.0",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^15.1.0",
@@ -49,8 +48,8 @@
     "prettier-plugin-tailwindcss": "^0.2.7",
     "rollup-plugin-multi-input": "^1.4.1",
     "sharp": "^0.32.0",
-    "stylelint": "^15.4.0",
-    "stylelint-config-recommended": "^11.0.0",
+    "stylelint": "^15.5.0",
+    "stylelint-config-recommended": "^12.0.0",
     "stylelint-order": "^6.0.3",
     "subset-font": "^2.1.0",
     "tailwindcss": "^3.3.1",
@@ -68,8 +67,9 @@
     "last 2 versions"
   ],
   "volta": {
-    "node": "18.14.2",
-    "npm": "9.5.0"
+    "node": "18.16.0",
+    "npm": "9.5.1",
+    "pnpm": "8.2.0"
   },
   "engines": {
     "node": ">=18",
