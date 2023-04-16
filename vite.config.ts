@@ -7,7 +7,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: ['assets/src/js/**/*.js'],
+      input: ['assets/src/js/**/*.js', 'assets/src/js/**/*.ts'],
       output: {
         entryFileNames: '[name].js',
         assetFileNames: '[name].[ext]',

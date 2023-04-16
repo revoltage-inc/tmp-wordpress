@@ -12,5 +12,8 @@ assets/dist/
 # VSCode Plugin
 .history/
 
-# TailwindCSS
+# Assets
 assets/src/css/lib/tailwind.css
+assets/src/js/lib/modernizr.js
+assets/src/js/lib/swiper.js
+assets/src/js/lib/yubinbango.js
