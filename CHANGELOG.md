@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.13](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.12...v1.0.13) (2023-04-16)
+
+
+### Bug Fixes
+
+* 2 scriptsをTypescript化 ([fb05ad6](https://github.com/revoltage-inc/tmp-wordpress/commit/fb05ad6d421445b17f8f868d99a247337cddd9f9))
+* 2 ViteとTailwindの設定ファイルをTypescript化 ([0289d7a](https://github.com/revoltage-inc/tmp-wordpress/commit/0289d7a476f010cd9baec56912d6a4cf32c9b5ae))
+* 2 コマンドの並列実行をnpm-run-allからconcurrentlyに変更 ([70c939c](https://github.com/revoltage-inc/tmp-wordpress/commit/70c939c1ce983c3a50a1eaa224e7550d117f92fd))
+* 2 フォーマット ([4138fc2](https://github.com/revoltage-inc/tmp-wordpress/commit/4138fc2849f60b5830edd171d99a50c39eca5fbc))
+* 2 一部処理をTypescript化 ([2413314](https://github.com/revoltage-inc/tmp-wordpress/commit/241331437d23fc0441529b679de3e060bc93040a))
+
 ## [1.0.12](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.11...v1.0.12) (2023-04-16)
 
 
