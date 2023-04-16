@@ -3,11 +3,8 @@ import multiInput from 'rollup-plugin-multi-input'
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 
-module.exports = defineConfig({
-  target: 'es2022',
-  esbuild: {
-    minify: true,
-  },
+// https://vitejs.dev/config/
+export default defineConfig({
   build: {
     rollupOptions: {
       input: ['assets/src/js/**/*.js'],

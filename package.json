@@ -11,7 +11,7 @@
     "build:font": "node scripts/font.mjs --src assets/src/font --dist assets/dist/font",
     "build:svg": "node scripts/copy.mjs --src assets/src/svg --dist assets/dist/svg",
     "build:img": "node scripts/sharp.mjs --src assets/src/img --dist assets/dist/img",
-    "build:js": "vite build --config vite.config.js --minify",
+    "build:js": "vite build --config vite.config.ts --minify",
     "build:modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
     "watch": "concurrently \"npm:watch:*\"",
     "watch:tw": "chokidar \"{index,header,footer,404}.php\" \"{pages,components,singles,archives}/**/*.php\" --command \"npm run build:tw\" --initial",
@@ -54,6 +54,7 @@
     "subset-font": "^2.1.0",
     "tailwindcss": "^3.3.1",
     "tiny-glob": "^0.2.9",
+    "typescript": "^5.0.4",
     "vite": "^4.2.1"
   },
   "overrides": {
