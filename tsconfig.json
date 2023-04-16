@@ -15,10 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "baseUrl": ".",
-    "paths": {},
-    "types": ["vite/client"]
   },
-  "include": ["assets/src/js/**/*.ts"],
+  "include": ["assets/src/js/**/*.ts", "scripts/**/*.mts"],
   "exclude": ["node_modules", ".history"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

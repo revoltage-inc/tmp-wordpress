@@ -34,7 +34,7 @@ const text =
         .replace(extname(srcFilePath), '.woff2')
 
       // Create output directory for font files
-      await mkdir(dirname(distFilePath), { recursive: true, force: true })
+      await mkdir(dirname(distFilePath), { recursive: true })
 
       // Convert and Subset font file
       const srcFile = await readFile(srcFilePath)
