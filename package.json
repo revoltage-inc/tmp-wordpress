@@ -12,6 +12,7 @@
     "build:svg": "node scripts/copy.mjs --src assets/src/svg --dist assets/dist/svg",
     "build:img": "node scripts/sharp.mjs --src assets/src/img --dist assets/dist/img",
     "build:js": "vite build --config vite.config.js --minify",
+    "build:modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
     "watch": "run-p watch:*",
     "watch:tw": "chokidar \"{index,header,footer,404}.php\" \"{pages,components,singles,archives}/**/*.php\" --command \"npm run build:tw\" --initial",
     "watch:css": "chokidar \"assets/src/css/**/*.css\" --command \"npm run build:css\" --initial",
@@ -20,7 +21,6 @@
     "watch:img": "chokidar \"assets/src/img/**/*.{jpg,jpeg,png,avif}\" --command \"npm run build:img\" --initial",
     "watch:js": "chokidar \"assets/src/js/**/*.js\" --command \"npm run build:js\" --initial",
     "lint": "stylelint assets/src/css/**/*.css --fix --config stylelint.config.js",
-    "modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
     "update": "pnpm -r update --latest --depth 100 && pnpm install --lockfile-only && npm install --package-lock-only"
   },
   "dependencies": {
