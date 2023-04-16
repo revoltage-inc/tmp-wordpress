@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.10...v1.0.11) (2023-04-11)
+
+
+### Bug Fixes
+
+* 128 stylelint-config-prettierを削除 ([c1ac3d5](https://github.com/revoltage-inc/tmp-wordpress/commit/c1ac3d55497d3407d8873763bc8528dc94fd99f5))
+
 ## [1.0.10](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.9...v1.0.10) (2023-04-07)
 
 
