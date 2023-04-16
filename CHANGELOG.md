@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.12](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.11...v1.0.12) (2023-04-16)
+
+
+### Bug Fixes
+
+* 133 Node.jsとnpmのバージョンをアップデート ([ca71e41](https://github.com/revoltage-inc/tmp-wordpress/commit/ca71e4119efbef3f31a510a85bd03118f1fd5fab))
+* 133 PHPのバージョンを8.0以上に変更 ([c8c97d9](https://github.com/revoltage-inc/tmp-wordpress/commit/c8c97d9a7e7dd7cb6bfa87fcb5346b9f92387511))
+* 133 pnpmを導入 ([f07ae6d](https://github.com/revoltage-inc/tmp-wordpress/commit/f07ae6d9c098d31657be7a97af30a35191a28f65))
+* 133 READMEを日本語化 ([69519cb](https://github.com/revoltage-inc/tmp-wordpress/commit/69519cb54b323a5def98cce802ebe72ad9647298))
+* 133 コマンドを修正 ([1fcfdd2](https://github.com/revoltage-inc/tmp-wordpress/commit/1fcfdd25f5d6c30825bfd8e88b5532d7a55c432b))
+* 133 テーマ名と説明を変更 ([7afd225](https://github.com/revoltage-inc/tmp-wordpress/commit/7afd22540eb2e3fea5dbaf5771352fa2ac09f46c))
+* 133 パッケージを更新 ([69ab032](https://github.com/revoltage-inc/tmp-wordpress/commit/69ab0322e19554b792ebad286598fc7567eabb96))
+* 133 リネーム ([4940ae1](https://github.com/revoltage-inc/tmp-wordpress/commit/4940ae119cf4ff99f629c4bef8afb4e27d56aaec))
+* 618 パッケージの更新をnpm-check-updatesからpnpmに変更 ([a9ada57](https://github.com/revoltage-inc/tmp-wordpress/commit/a9ada57c606e5c82b4c06fdc93c0ecea82e759d1))
+
 ## [1.0.11](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.10...v1.0.11) (2023-04-11)
 
 
