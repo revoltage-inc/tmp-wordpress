@@ -21,7 +21,7 @@
     "watch:js": "chokidar \"assets/src/js/**/*.js\" --command \"npm run build:js\" --initial",
     "lint": "stylelint assets/src/css/**/*.css --fix --config stylelint.config.js",
     "modernizr": "node scripts/modernizr.mjs --dist assets/src/js/lib",
-    "update": "pnpm -r update --latest --depth 100 pnpm install --lockfile-only && npm install --package-lock-only"
+    "update": "pnpm -r update --latest --depth 100 && pnpm install --lockfile-only && npm install --package-lock-only"
   },
   "dependencies": {
     "swiper": "^9.2.0",
