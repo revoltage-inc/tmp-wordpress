@@ -1,7 +1,7 @@
 {
   "name": "tmp-wordpress",
   "version": "1.0.11",
-  "description": "Template for WordPress Theme",
+  "description": "Template for WordPress theme using Vite, TailwindCSS, etc.",
   "author": "@yogarasu",
   "license": "MIT",
   "scripts": {
