@@ -1,10 +1,7 @@
 /**
  * スムーススクロールする
- * @param {HTMLElement} element
- * @param {Number} duration
- * @returns
  */
-function smoothScroll(element) {
+function smoothScroll(element: HTMLElement) {
   const rect = element.getBoundingClientRect().top // ブラウザからの高さ
   const offset = window.pageYOffset // 現在のスクロール量
   const wpadminbar = document.getElementById('wpadminbar')

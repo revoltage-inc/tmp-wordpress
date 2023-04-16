@@ -21,10 +21,12 @@
  * a global `Modernizr` object, and as classes on the `<html>` element. This
  * information allows you to progressively enhance your pages with a granular level
  * of control over the experience.
- */
+*/
 
-;(function (scriptGlobalObject, _window, document) {
-  var tests = []
+;(function(scriptGlobalObject, window, document, undefined){
+
+  var tests = [];
+  
 
   /**
    * ModernizrProto is the constructor for Modernizr
@@ -38,47 +40,52 @@
     // Any settings that don't work as separate modules
     // can go in here as configuration.
     _config: {
-      classPrefix: '',
-      enableClasses: true,
-      enableJSClass: true,
-      usePrefixes: true,
+      'classPrefix': '',
+      'enableClasses': true,
+      'enableJSClass': true,
+      'usePrefixes': true
     },
 
     // Queue of tests
     _q: [],
 
     // Stub these for people who are listening
-    on: function (test, cb) {
+    on: function(test, cb) {
       // I don't really think people should do this, but we can
       // safe guard it a bit.
       // -- NOTE:: this gets WAY overridden in src/addTest for actual async tests.
       // This is in case people listen to synchronous tests. I would leave it out,
       // but the code to *disallow* sync tests in the real version of this
       // function is actually larger than this.
-      var self = this
-      setTimeout(function () {
-        cb(self[test])
-      }, 0)
+      var self = this;
+      setTimeout(function() {
+        cb(self[test]);
+      }, 0);
     },
 
-    addTest: function (name, fn, options) {
-      tests.push({ name: name, fn: fn, options: options })
+    addTest: function(name, fn, options) {
+      tests.push({name: name, fn: fn, options: options});
     },
 
-    addAsyncTest: function (fn) {
-      tests.push({ name: null, fn: fn })
-    },
-  }
+    addAsyncTest: function(fn) {
+      tests.push({name: null, fn: fn});
+    }
+  };
+
+  
 
   // Fake some of Object.create so we can force non test results to be non "own" properties.
-  var Modernizr = function () {}
-  Modernizr.prototype = ModernizrProto
+  var Modernizr = function() {};
+  Modernizr.prototype = ModernizrProto;
 
   // Leak modernizr globally when you `require` it rather than force it here.
   // Overwrite name so constructor name is nicer :D
-  Modernizr = new Modernizr()
+  Modernizr = new Modernizr();
 
-  var classes = []
+  
+
+  var classes = [];
+  
 
   /**
    * is returns a boolean if the typeof an obj is exactly type.
@@ -90,8 +97,10 @@
    * @returns {boolean} true if the typeof the first parameter is exactly the specified type, false otherwise
    */
   function is(obj, type) {
-    return typeof obj === type
+    return typeof obj === type;
   }
+
+  ;
 
   /**
    * Run through all tests and detect their support in the current UA.
@@ -100,19 +109,18 @@
    * @returns {void}
    */
   function testRunner() {
-    var featureNames
-    var feature
-    var aliasIdx
-    var result
-    var nameIdx
-    var featureName
-    var featureNameSplit
+    var featureNames;
+    var feature;
+    var aliasIdx;
+    var result;
+    var nameIdx;
+    var featureName;
+    var featureNameSplit;
 
     for (var featureIdx in tests) {
-      // eslint-disable-next-line no-prototype-builtins
       if (tests.hasOwnProperty(featureIdx)) {
-        featureNames = []
-        feature = tests[featureIdx]
+        featureNames = [];
+        feature = tests[featureIdx];
         // run the test, throw the return value into the Modernizr,
         // then based on that boolean, define an appropriate className
         // and push it into an array of classes we'll join later.
@@ -121,50 +129,48 @@
         // but not directly added to the object. That should
         // be done with a post-run addTest call.
         if (feature.name) {
-          featureNames.push(feature.name.toLowerCase())
+          featureNames.push(feature.name.toLowerCase());
 
           if (feature.options && feature.options.aliases && feature.options.aliases.length) {
             // Add all the aliases into the names list
             for (aliasIdx = 0; aliasIdx < feature.options.aliases.length; aliasIdx++) {
-              featureNames.push(feature.options.aliases[aliasIdx].toLowerCase())
+              featureNames.push(feature.options.aliases[aliasIdx].toLowerCase());
             }
           }
         }
 
         // Run the test, or use the raw value if it's not a function
-        result = is(feature.fn, 'function') ? feature.fn() : feature.fn
+        result = is(feature.fn, 'function') ? feature.fn() : feature.fn;
 
         // Set each of the names on the Modernizr object
         for (nameIdx = 0; nameIdx < featureNames.length; nameIdx++) {
-          featureName = featureNames[nameIdx]
+          featureName = featureNames[nameIdx];
           // Support dot properties as sub tests. We don't do checking to make sure
           // that the implied parent tests have been added. You must call them in
           // order (either in the test, or make the parent test a dependency).
           //
           // Cap it to TWO to make the logic simple and because who needs that kind of subtesting
           // hashtag famous last words
-          featureNameSplit = featureName.split('.')
+          featureNameSplit = featureName.split('.');
 
           if (featureNameSplit.length === 1) {
-            Modernizr[featureNameSplit[0]] = result
+            Modernizr[featureNameSplit[0]] = result;
           } else {
             // cast to a Boolean, if not one already or if it doesnt exist yet (like inputtypes)
-            if (
-              !Modernizr[featureNameSplit[0]] ||
-              (Modernizr[featureNameSplit[0]] &&
-                !(Modernizr[featureNameSplit[0]] instanceof Boolean))
-            ) {
-              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]])
+            if (!Modernizr[featureNameSplit[0]] || Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+              Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
             }
 
-            Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result
+            Modernizr[featureNameSplit[0]][featureNameSplit[1]] = result;
           }
 
-          classes.push((result ? '' : 'no-') + featureNameSplit.join('-'))
+          classes.push((result ? '' : 'no-') + featureNameSplit.join('-'));
         }
       }
     }
   }
+  ;
+
   /**
    * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
    *
@@ -177,23 +183,26 @@
    */
 
   // hasOwnProperty shim by kangax needed for Safari 2.0 support
-  var hasOwnProp
-  ;(function () {
-    var _hasOwnProperty = {}.hasOwnProperty
+  var hasOwnProp;
+
+  (function() {
+    var _hasOwnProperty = ({}).hasOwnProperty;
     /* istanbul ignore else */
     /* we have no way of testing IE 5.5 or safari 2,
      * so just assume the else gets hit */
     if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
-      hasOwnProp = function (object, property) {
-        return _hasOwnProperty.call(object, property)
-      }
-    } else {
-      hasOwnProp = function (object, property) {
-        /* yes, this can give false positives/negatives, but most of the time we don't care about those */
-        return property in object && is(object.constructor.prototype[property], 'undefined')
-      }
+      hasOwnProp = function(object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
     }
-  })()
+    else {
+      hasOwnProp = function(object, property) { /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
+      };
+    }
+  })();
+
+  
 
   /**
    * docElement is a convenience wrapper to grab the root element of the document
@@ -201,7 +210,8 @@
    * @access private
    * @returns {HTMLElement|SVGElement} The root element of the document
    */
-  var docElement = document.documentElement
+  var docElement = document.documentElement;
+  
 
   /**
    * A convenience helper to check if the document we are running in is an SVG document
@@ -209,7 +219,9 @@
    * @access private
    * @returns {boolean}
    */
-  var isSVG = docElement.nodeName.toLowerCase() === 'svg'
+  var isSVG = docElement.nodeName.toLowerCase() === 'svg';
+
+  
 
   /**
    * setClasses takes an array of class names and adds them to the root element
@@ -221,35 +233,38 @@
   // Pass in an and array of class names, e.g.:
   //  ['no-webp', 'borderradius', ...]
   function setClasses(classes) {
-    var className = docElement.className
-    var classPrefix = Modernizr._config.classPrefix || ''
+    var className = docElement.className;
+    var classPrefix = Modernizr._config.classPrefix || '';
 
     if (isSVG) {
-      className = className.baseVal
+      className = className.baseVal;
     }
 
     // Change `no-js` to `js` (independently of the `enableClasses` option)
     // Handle classPrefix on this too
     if (Modernizr._config.enableJSClass) {
-      var reJS = new RegExp('(^|\\s)' + classPrefix + 'no-js(\\s|$)')
-      className = className.replace(reJS, '$1' + classPrefix + 'js$2')
+      var reJS = new RegExp('(^|\\s)' + classPrefix + 'no-js(\\s|$)');
+      className = className.replace(reJS, '$1' + classPrefix + 'js$2');
     }
 
     if (Modernizr._config.enableClasses) {
       // Add the new classes
       if (classes.length > 0) {
-        className += ' ' + classPrefix + classes.join(' ' + classPrefix)
+        className += ' ' + classPrefix + classes.join(' ' + classPrefix);
       }
       if (isSVG) {
-        docElement.className.baseVal = className
+        docElement.className.baseVal = className;
       } else {
-        docElement.className = className
+        docElement.className = className;
       }
     }
   }
 
+  ;
+
+
   // _l tracks listeners for async tests, as well as tests that execute after the initial run
-  ModernizrProto._l = {}
+  ModernizrProto._l = {};
 
   /**
    * Modernizr.on is a way to listen for the completion of async tests. Being
@@ -275,24 +290,23 @@
    * });
    * ```
    */
-  ModernizrProto.on = function (feature, cb) {
+  ModernizrProto.on = function(feature, cb) {
     // Create the list of listeners if it doesn't exist
     if (!this._l[feature]) {
-      this._l[feature] = []
+      this._l[feature] = [];
     }
 
     // Push this test on to the listener list
-    this._l[feature].push(cb)
+    this._l[feature].push(cb);
 
     // If it's already been resolved, trigger it on next tick
-    // eslint-disable-next-line no-prototype-builtins
     if (Modernizr.hasOwnProperty(feature)) {
       // Next Tick
-      setTimeout(function () {
-        Modernizr._trigger(feature, Modernizr[feature])
-      }, 0)
+      setTimeout(function() {
+        Modernizr._trigger(feature, Modernizr[feature]);
+      }, 0);
     }
-  }
+  };
 
   /**
    * _trigger is the private function used to signal test completion and run any
@@ -307,25 +321,25 @@
    * result of a feature detection function
    * @returns {void}
    */
-  ModernizrProto._trigger = function (feature, res) {
+  ModernizrProto._trigger = function(feature, res) {
     if (!this._l[feature]) {
-      return
+      return;
     }
 
-    var cbs = this._l[feature]
+    var cbs = this._l[feature];
 
     // Force async
-    setTimeout(function () {
-      var i, cb
+    setTimeout(function() {
+      var i, cb;
       for (i = 0; i < cbs.length; i++) {
-        cb = cbs[i]
-        cb(res)
+        cb = cbs[i];
+        cb(res);
       }
-    }, 0)
+    }, 0);
 
     // Don't trigger these again
-    delete this._l[feature]
-  }
+    delete this._l[feature];
+  };
 
   /**
    * addTest allows you to define your own feature detects that are not currently
@@ -398,20 +412,22 @@
    * just a convenience to let you write more readable code.
    */
   function addTest(feature, test) {
+
     if (typeof feature === 'object') {
       for (var key in feature) {
         if (hasOwnProp(feature, key)) {
-          addTest(key, feature[key])
+          addTest(key, feature[ key ]);
         }
       }
     } else {
-      feature = feature.toLowerCase()
-      var featureNameSplit = feature.split('.')
-      var last = Modernizr[featureNameSplit[0]]
+
+      feature = feature.toLowerCase();
+      var featureNameSplit = feature.split('.');
+      var last = Modernizr[featureNameSplit[0]];
 
       // Again, we don't check for parent test existence. Get that right, though.
       if (featureNameSplit.length === 2) {
-        last = last[featureNameSplit[1]]
+        last = last[featureNameSplit[1]];
       }
 
       if (typeof last !== 'undefined') {
@@ -420,42 +436,41 @@
         //   var re = new RegExp("\\b(no-)?" + feature + "\\b");
         //   docElement.className = docElement.className.replace( re, '' );
         // but, no rly, stuff 'em.
-        return Modernizr
+        return Modernizr;
       }
 
-      test = typeof test === 'function' ? test() : test
+      test = typeof test === 'function' ? test() : test;
 
       // Set the value (this is the magic, right here).
       if (featureNameSplit.length === 1) {
-        Modernizr[featureNameSplit[0]] = test
+        Modernizr[featureNameSplit[0]] = test;
       } else {
         // cast to a Boolean, if not one already
-        if (
-          Modernizr[featureNameSplit[0]] &&
-          !(Modernizr[featureNameSplit[0]] instanceof Boolean)
-        ) {
-          Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]])
+        if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+          Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
         }
 
-        Modernizr[featureNameSplit[0]][featureNameSplit[1]] = test
+        Modernizr[featureNameSplit[0]][featureNameSplit[1]] = test;
       }
 
       // Set a single class (either `feature` or `no-feature`)
-      setClasses([(!!test && test !== false ? '' : 'no-') + featureNameSplit.join('-')])
+      setClasses([(!!test && test !== false ? '' : 'no-') + featureNameSplit.join('-')]);
 
       // Trigger the event
-      Modernizr._trigger(feature, test)
+      Modernizr._trigger(feature, test);
     }
 
-    return Modernizr // allow chaining.
+    return Modernizr; // allow chaining.
   }
 
   // After all the tests are run, add self to the Modernizr prototype
-  Modernizr._q.push(function () {
-    ModernizrProto.addTest = addTest
-  })
+  Modernizr._q.push(function() {
+    ModernizrProto.addTest = addTest;
+  });
 
-  /*!
+  
+
+/*!
 {
   "name": "Webp",
   "async": true,
@@ -482,7 +497,7 @@
   }]
 }
 !*/
-  /* DOC
+/* DOC
 Tests for lossy, non-alpha webp support.
 
 Tests for all forms of webp support (lossless, lossy, alpha, and animated)..
@@ -494,64 +509,64 @@ Tests for all forms of webp support (lossless, lossy, alpha, and animated)..
 
 */
 
-  Modernizr.addAsyncTest(function () {
-    var webpTests = [
-      {
-        uri: 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
-        name: 'webp',
-      },
-      {
-        uri: 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==',
-        name: 'webp.alpha',
-      },
-      {
-        uri: 'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA',
-        name: 'webp.animation',
-      },
-      {
-        uri: 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=',
-        name: 'webp.lossless',
-      },
-    ]
 
-    var webp = webpTests.shift()
+  Modernizr.addAsyncTest(function() {
+
+    var webpTests = [{
+      'uri': 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
+      'name': 'webp'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==',
+      'name': 'webp.alpha'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA',
+      'name': 'webp.animation'
+    }, {
+      'uri': 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=',
+      'name': 'webp.lossless'
+    }];
+
+    var webp = webpTests.shift();
     function test(name, uri, cb) {
-      var image = new Image()
+
+      var image = new Image();
 
       function addResult(event) {
         // if the event is from 'onload', check the see if the image's width is
         // 1 pixel (which indicates support). otherwise, it fails
 
-        var result = event && event.type === 'load' ? image.width === 1 : false
-        var baseTest = name === 'webp'
+        var result = event && event.type === 'load' ? image.width === 1 : false;
+        var baseTest = name === 'webp';
 
         // if it is the base test, and the result is false, just set a literal false
         // rather than use the Boolean constructor
-        addTest(name, baseTest && result ? new Boolean(result) : result)
+        addTest(name, (baseTest && result) ? new Boolean(result) : result);
 
         if (cb) {
-          cb(event)
+          cb(event);
         }
       }
 
-      image.onerror = addResult
-      image.onload = addResult
+      image.onerror = addResult;
+      image.onload = addResult;
 
-      image.src = uri
+      image.src = uri;
     }
 
     // test for webp support in general
-    test(webp.name, webp.uri, function (e) {
+    test(webp.name, webp.uri, function(e) {
       // if the webp test loaded, test everything else.
       if (e && e.type === 'load') {
         for (var i = 0; i < webpTests.length; i++) {
-          test(webpTests[i].name, webpTests[i].uri)
+          test(webpTests[i].name, webpTests[i].uri);
         }
       }
-    })
-  })
+    });
 
-  /*!
+  });
+
+
+/*!
 {
   "name": "AVIF",
   "async": true,
@@ -566,32 +581,37 @@ Tests for all forms of webp support (lossless, lossy, alpha, and animated)..
   }]
 }
 !*/
-  /* DOC
+/* DOC
 Test for AVIF support
 */
 
-  Modernizr.addAsyncTest(function () {
-    var image = new Image()
 
-    image.onload = image.onerror = function () {
-      addTest('avif', image.width === 1)
-    }
-
-    image.src =
-      'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAAEcbWV0YQAAAAAAAABIaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGNhdmlmIC0gaHR0cHM6Ly9naXRodWIuY29tL2xpbmstdS9jYXZpZgAAAAAeaWxvYwAAAAAEQAABAAEAAAAAAUQAAQAAABcAAAAqaWluZgEAAAAAAAABAAAAGmluZmUCAAAAAAEAAGF2MDFJbWFnZQAAAAAOcGl0bQAAAAAAAQAAAHJpcHJwAAAAUmlwY28AAAAQcGFzcAAAAAEAAAABAAAAFGlzcGUAAAAAAAAAAQAAAAEAAAAQcGl4aQAAAAADCAgIAAAAFmF2MUOBAAwACggYAAYICGgIIAAAABhpcG1hAAAAAAAAAAEAAQUBAoMDhAAAAB9tZGF0CggYAAYICGgIIBoFHiAAAEQiBACwDoA='
-  })
+    Modernizr.addAsyncTest(function() {
+      var image = new Image();
+  
+      image.onload = image.onerror = function() {
+        addTest('avif', image.width === 1);
+      };
+  
+      image.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAAEcbWV0YQAAAAAAAABIaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGNhdmlmIC0gaHR0cHM6Ly9naXRodWIuY29tL2xpbmstdS9jYXZpZgAAAAAeaWxvYwAAAAAEQAABAAEAAAAAAUQAAQAAABcAAAAqaWluZgEAAAAAAAABAAAAGmluZmUCAAAAAAEAAGF2MDFJbWFnZQAAAAAOcGl0bQAAAAAAAQAAAHJpcHJwAAAAUmlwY28AAAAQcGFzcAAAAAEAAAABAAAAFGlzcGUAAAAAAAAAAQAAAAEAAAAQcGl4aQAAAAADCAgIAAAAFmF2MUOBAAwACggYAAYICGgIIAAAABhpcG1hAAAAAAAAAAEAAQUBAoMDhAAAAB9tZGF0CggYAAYICGgIIBoFHiAAAEQiBACwDoA=';
+    });
+  
 
   // Run each test
-  testRunner()
+  testRunner();
 
-  delete ModernizrProto.addTest
-  delete ModernizrProto.addAsyncTest
+  delete ModernizrProto.addTest;
+  delete ModernizrProto.addAsyncTest;
 
   // Run the things that are supposed to run after the tests
   for (var i = 0; i < Modernizr._q.length; i++) {
-    Modernizr._q[i]()
+    Modernizr._q[i]();
   }
 
   // Leak Modernizr namespace
-  scriptGlobalObject.Modernizr = Modernizr
-})(window, window, document)
+  scriptGlobalObject.Modernizr = Modernizr;
+
+
+;
+
+})(window, window, document);

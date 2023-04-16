@@ -3,8 +3,8 @@
  * @param {*} entries
  * @param {*} observer
  */
-function fadein(entries, observer) {
-  entries.forEach((entry) => {
+function fadein(entries: any, observer: any) {
+  entries.forEach((entry: any) => {
     if (entry.isIntersecting && !entry.target.classList.contains('fadeup')) {
       entry.target.classList.add('fadeup')
       observer.unobserve(entry.target)

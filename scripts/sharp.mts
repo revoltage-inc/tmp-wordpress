@@ -28,7 +28,7 @@ import glob from 'tiny-glob'
         .replace(extname(srcFilePath), '')
 
       // Create output directory for image files
-      await mkdir(dirname(distFilePath), { recursive: true, force: true })
+      await mkdir(dirname(distFilePath), { recursive: true })
 
       // Convert image file
       sharp(srcFilePath)

@@ -1,8 +1,8 @@
-const colors = require('tailwindcss/colors')
-const plugin = require('tailwindcss/plugin')
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import colors from 'tailwindcss/colors'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['{index,header,footer,404}.php', '{pages,components,singles,archives}/**/*.php'],
   theme: {
     colors: {
@@ -28,4 +28,5 @@ module.exports = {
       addUtilities([])
     }),
   ],
-}
+  important: false,
+} satisfies Config

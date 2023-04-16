@@ -1,6 +1,6 @@
 // モーダルの制御
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.querySelector('#modal')
+  const modal = document.querySelector('#modal') as HTMLDialogElement
   const closeButton = document.querySelector('header #modal .close-button')
   const openButton = document.querySelector('header #modal .open-button')
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeButton) {
       closeButton.addEventListener('click', (event) => {
         event.stopPropagation()
-        document.querySelector('body').style.removeProperty('overflow')
+        document.querySelector('body')?.style.removeProperty('overflow')
         modal.close()
       })
     }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       openButton.addEventListener('click', (event) => {
         event.stopPropagation()
         // モーダルの裏をスクロールできないようにする
-        document.querySelector('body').style.setProperty('overflow', 'hidden')
+        document.querySelector('body')?.style.setProperty('overflow', 'hidden')
         modal.showModal()
       })
     }

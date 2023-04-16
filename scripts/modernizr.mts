@@ -16,6 +16,7 @@ import { join } from 'node:path'
   const options = program.opts()
   const distDirPath = options.dist
 
+  // @ts-ignore
   modernizr.build({ 'feature-detects': ['img/webp', 'img/avif'] }, async (result) => {
     await writeFile(join(distDirPath, 'modernizr.js'), result)
   })
