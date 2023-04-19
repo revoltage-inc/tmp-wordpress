@@ -62,7 +62,7 @@
     "ts-node": "^10.9.1",
     "typed-query-selector": "^2.9.2",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1"
+    "vite": "^4.2.2"
   },
   "overrides": {
     "css-what": "^5.0.1",
