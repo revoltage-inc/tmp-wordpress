@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/revoltage-inc/tmp-wordpress/compare/v2.0.0...v2.0.1) (2023-04-19)
+
+
+### Bug Fixes
+
+* 144 Dependabotの更新間隔を日本時間の毎週日曜日午前4時に修正 ([4cdd9d6](https://github.com/revoltage-inc/tmp-wordpress/commit/4cdd9d611912a0fbadd7e079fd975fd5b97f38e3))
+* 144 パッケージを更新 ([ceda5dd](https://github.com/revoltage-inc/tmp-wordpress/commit/ceda5ddb380fcaa6ceebc35c0624babc3726c707))
+
 ## [1.0.13](https://github.com/revoltage-inc/tmp-wordpress/compare/v1.0.12...v1.0.13) (2023-04-16)
 
 
