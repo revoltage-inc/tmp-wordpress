@@ -60,7 +60,7 @@
     "tailwindcss": "^3.3.1",
     "tiny-glob": "^0.2.9",
     "ts-node": "^10.9.1",
-    "typed-query-selector": "^2.9.2",
+    "typed-query-selector": "^2.10.0",
     "typescript": "^5.0.4",
     "vite": "^4.2.2"
   },
