@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.2](https://github.com/revoltage-inc/tmp-wordpress/compare/v2.0.1...v2.0.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* 152 CSSの圧縮ライブラリをpostcss-cssoからcssnanoへ変更 ([3716f26](https://github.com/revoltage-inc/tmp-wordpress/commit/3716f26a3e96601e713bd14daabeaafe3a0fe7a5))
+* 152 postcss-inline-svgを削除 ([e1b13a4](https://github.com/revoltage-inc/tmp-wordpress/commit/e1b13a4781ef5fd0d8023f871b790b7387e6ada7))
+* 152 パッケージを更新 ([d32efb1](https://github.com/revoltage-inc/tmp-wordpress/commit/d32efb1ed429291a3cfb70355d195812a0c24d0a))
+* 152 フォーマット ([a8b2dc8](https://github.com/revoltage-inc/tmp-wordpress/commit/a8b2dc80e9aebdab49b3ba9f04d90ad7070f0ac9))
+
 ## [2.0.1](https://github.com/revoltage-inc/tmp-wordpress/compare/v2.0.0...v2.0.1) (2023-04-19)
 
 
