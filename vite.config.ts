@@ -17,7 +17,7 @@ export default defineConfig({
         // manualChunks: {
         //   swiper: ['swiper'],
         // },
-        chunkFileNames: 'lib/[name].js',
+        chunkFileNames: 'libs/[name].js',
       },
       plugins: [
         multiInput({ relative: 'assets/src/js/' }),

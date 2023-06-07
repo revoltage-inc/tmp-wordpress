@@ -1,4 +1,4 @@
-import './lib/modernizr'
+import './libs/modernizr'
 import './custom/viewport'
 import './custom/dialog'
 import './custom/scroll'
