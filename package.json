@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "concurrently \"npm:build:*\"",
-    "build:tw": "tailwindcss -i ./assets/src/css/lib/tailwind.css -o ./assets/dist/css/lib/tailwind.css --postcss --minify",
-    "build:css": "npm run lint && postcss assets/src/css/*.css -d assets/dist/css/ --config postcss.config.js && postcss assets/src/css/lib/*.css -d assets/dist/css/lib/ --config postcss.config.js && postcss assets/src/css/admin/*.css -d assets/dist/css/admin/ --config postcss.config.js && postcss assets/src/css/pages/*.css -d assets/dist/css/pages/ --config postcss.config.js && npm run build:tw",
+    "build:tw": "tailwindcss -i ./assets/src/css/libs/tailwind.css -o ./assets/dist/css/libs/tailwind.css --postcss --minify",
+    "build:css": "npm run lint && postcss assets/src/css/*.css -d assets/dist/css/ --config postcss.config.js && postcss assets/src/css/libs/*.css -d assets/dist/css/libs/ --config postcss.config.js && postcss assets/src/css/admin/*.css -d assets/dist/css/admin/ --config postcss.config.js && postcss assets/src/css/pages/*.css -d assets/dist/css/pages/ --config postcss.config.js && npm run build:tw",
     "build:font": "node --no-warnings --loader ts-node/esm scripts/font.mts --src assets/src/font --dist assets/dist/font",
     "build:svg": "node --no-warnings --loader ts-node/esm scripts/copy.mts --src assets/src/svg --dist assets/dist/svg",
     "build:img": "node --no-warnings --loader ts-node/esm scripts/sharp.mts --src assets/src/img --dist assets/dist/img",
