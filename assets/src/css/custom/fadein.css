@@ -1,26 +1,20 @@
-.fadein {
-  & .fadeup {
-    animation-name: fadeup;
-    animation-duration: 1s;
-  }
-
-  & .fadedown {
-    animation-name: fadeup;
-    animation-duration: 1s;
-  }
-
-  & .fadeleft {
-    animation-name: fadeleft;
-    animation-duration: 1s;
-  }
-
-  & .faderight {
-    animation-name: faderight;
-    animation-duration: 1s;
-  }
+.fadein-up {
+  animation: fadeinUp 1s;
 }
 
-@keyframes fadeup {
+.fadein-down {
+  animation: fadeinDown 1s;
+}
+
+.fadein-left {
+  animation: fadeinLeft 1s;
+}
+
+.fadein-right {
+  animation: fadeinRight 1s;
+}
+
+@keyframes fadeinUp {
   from {
     opacity: 0;
     transform: translateY(10vh);
@@ -31,7 +25,7 @@
   }
 }
 
-@keyframes fadedown {
+@keyframes fadeinDown {
   from {
     opacity: 0;
     transform: translateY(-10vh);
@@ -42,7 +36,7 @@
   }
 }
 
-@keyframes fadeleft {
+@keyframes fadeinLeft {
   from {
     opacity: 0;
     transform: translateX(10vh);
@@ -53,7 +47,7 @@
   }
 }
 
-@keyframes faderight {
+@keyframes fadeinRight {
   from {
     opacity: 0;
     transform: translateX(-10vh);
