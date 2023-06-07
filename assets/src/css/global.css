@@ -2,6 +2,7 @@
 @import './custom/font';
 @import './custom/base';
 @import './custom/wp';
+@import './custom/dialog';
 @import './custom/pagination';
 /* @import './custom/fadein'; */
 /* @import './custom/loading'; */
