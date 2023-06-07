@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.3](https://github.com/revoltage-inc/tmp-wordpress/compare/v2.0.2...v2.0.3) (2023-06-07)
+
+
+### Bug Fixes
+
+* 180 debug.logファイルを無視するように修正 ([6113327](https://github.com/revoltage-inc/tmp-wordpress/commit/61133277525e2ba7d136cbe9fb1bf2d3a00a8340))
+* 180 dialogのcssを別ファイル参照化 ([ca90c63](https://github.com/revoltage-inc/tmp-wordpress/commit/ca90c63bcd3696867891667d53c3cc6431c90821))
+* 180 issueテンプレートを日本語化 ([7006408](https://github.com/revoltage-inc/tmp-wordpress/commit/7006408ae51ca9965c8320dcd5e4cd875ff0d8ad))
+* 180 pnpmをアップデート ([40b5314](https://github.com/revoltage-inc/tmp-wordpress/commit/40b5314983757169b21ae3459726c84ba93ab354))
+* 180 Tailwindにフォント設定を追加 ([4c3b59d](https://github.com/revoltage-inc/tmp-wordpress/commit/4c3b59d11057b83d8a80d6a31133ae5635730835))
+* 180 タイポを修正 ([5cb7726](https://github.com/revoltage-inc/tmp-wordpress/commit/5cb77264d84c0d81bfd801d8898c8fd9f80b2748))
+* 180 パッケージを更新 ([e9ea04d](https://github.com/revoltage-inc/tmp-wordpress/commit/e9ea04d6ff19525a1c1b1a0dfd52724f04de84b4))
+* 180 フォーマット ([ee8f9a7](https://github.com/revoltage-inc/tmp-wordpress/commit/ee8f9a754e262c6d4f7e6ce02589b8e3950add69))
+* 180 リネーム ([2547974](https://github.com/revoltage-inc/tmp-wordpress/commit/2547974a4b9483052c4687c87940307557747779))
+* 180 リネーム ([09dcf2e](https://github.com/revoltage-inc/tmp-wordpress/commit/09dcf2e56928b43b07807b9c93d5d5947e1fe1e6))
+* 180 リネーム ([0584dbe](https://github.com/revoltage-inc/tmp-wordpress/commit/0584dbeadee3f9e9f73ec0a12264ec69001e349d))
+* 180 リネーム ([69228f9](https://github.com/revoltage-inc/tmp-wordpress/commit/69228f93b2caf96c2810a5a1ad9b9adcb136a2f4))
+* 180 リネーム ([e04d2ad](https://github.com/revoltage-inc/tmp-wordpress/commit/e04d2ad8f125d1d3fe46b192bddc938b5cb06b99))
+* 180 リネーム ([d19182b](https://github.com/revoltage-inc/tmp-wordpress/commit/d19182bf39621170c55a26db9b57e0aa1086faf1))
+* 180 不要なjsファイルを削除 ([5fdd3b9](https://github.com/revoltage-inc/tmp-wordpress/commit/5fdd3b9608533af13589591d24cf8abd41ff270b))
+* 180 検索除外ファイルを追加 ([90de971](https://github.com/revoltage-inc/tmp-wordpress/commit/90de971ce19533162112411676935c1c4e826023))
+* 180 自動pタグ無効化設定を有効化 ([8f1acc7](https://github.com/revoltage-inc/tmp-wordpress/commit/8f1acc754ab76808b376de00ff09f04fa37a2c70))
+
 ## [2.0.2](https://github.com/revoltage-inc/tmp-wordpress/compare/v2.0.1...v2.0.2) (2023-04-24)
 
 
