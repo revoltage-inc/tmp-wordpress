@@ -17,17 +17,17 @@ add_action('wp_footer', function () {
   );
 
   // Top page
-  if (is_front_page()) {
-    wp_enqueue_script(
-      'page-top',
-      get_theme_file_uri('/assets/dist/js/pages/top.js'),
-      [],
-      date_i18n(
-        'YmdHis',
-        filemtime(get_theme_file_path('/assets/dist/js/pages/top.js'))
-      )
-    );
-  }
+  // if (is_front_page()) {
+  //   wp_enqueue_script(
+  //     'page-top',
+  //     get_theme_file_uri('/assets/dist/js/pages/top.js'),
+  //     [],
+  //     date_i18n(
+  //       'YmdHis',
+  //       filemtime(get_theme_file_path('/assets/dist/js/pages/top.js'))
+  //     )
+  //   );
+  // }
 
   // Thanks page
   if (is_page('thanks')) {
@@ -56,11 +56,11 @@ add_action('wp_footer', function () {
 
     wp_enqueue_script(
       'lib-yubinbango',
-      get_theme_file_uri('/assets/dist/js/lib/yubinbango.js'),
+      get_theme_file_uri('/assets/dist/js/libs/yubinbango.js'),
       [],
       date_i18n(
         'YmdHis',
-        filemtime(get_theme_file_path('/assets/dist/js/lib/yubinbango.js'))
+        filemtime(get_theme_file_path('/assets/dist/js/libs/yubinbango.js'))
       )
     );
   }
@@ -70,17 +70,17 @@ add_action('wp_footer', function () {
 add_action('login_enqueue_scripts', function () {
   wp_enqueue_script(
     'lib-modernizr',
-    get_theme_file_uri('/assets/dist/js/lib/modernizr.js'),
+    get_theme_file_uri('/assets/dist/js/libs/modernizr.js'),
     [],
     date_i18n(
       'YmdHis',
-      filemtime(get_theme_file_path('/assets/dist/js/lib/modernizr.js'))
+      filemtime(get_theme_file_path('/assets/dist/js/libs/modernizr.js'))
     )
   );
 });
 
 // ESMを使うときは、scriptタグのtype属性をmoduleに書き換える
-add_filter('script_loader_tag', function ($tag, $handle, $src) {
+add_filter('script_loader_tag', function ($tag, $handle) {
   if (in_array($handle, ['global', 'page-top', 'page-contact'])) {
     $tag = str_replace('text/javascript', 'module', $tag);
   }

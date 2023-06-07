@@ -28,15 +28,16 @@ function the_pagination() {
 
 // Load component file with shortcode
 add_shortcode('component', function ($atts = []) {
-  extract(shortcode_atts(['file' => null], $atts));
+  extract(shortcode_atts(['path' => null], $atts));
   ob_start();
-  if ($file) {
-    include(get_theme_file_path("components/$file.php"));
+  if ($path) {
+    include(get_theme_file_path("components/$path"));
   } else {
-    throw new Exception('Not found component file');
+    throw new Exception('Not found component path');
   }
   return ob_get_clean();
 });
+
 
 // Output SVG tag
 function the_svg($path, $class = null, $style = null) {
@@ -76,4 +77,11 @@ function the_svg($path, $class = null, $style = null) {
   }
 
   echo $dom->saveHTML();
+}
+
+/**
+ * Output debug message
+ */
+function debug($message) {
+  error_log(json_encode($message) . PHP_EOL, 3, get_theme_file_uri('/debug.log'));
 }

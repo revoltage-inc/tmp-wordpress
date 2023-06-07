@@ -31,10 +31,10 @@ get_template_part('functions/wp/post/comment');
 // get_template_part('functions/plugins/post-types-order'); // Post Types Order
 
 // Reading various files Settings
-get_template_part('functions/wp/common/jquery');
-get_template_part('functions/wp/common/js');
-get_template_part('functions/wp/common/css');
+get_template_part('functions/wp/custom/jquery');
+get_template_part('functions/wp/custom/js');
+get_template_part('functions/wp/custom/css');
 
 // Other
-get_template_part('functions/wp/common/function');
-get_template_part('functions/wp/common/head');
+get_template_part('functions/wp/custom/function');
+get_template_part('functions/wp/custom/head');
