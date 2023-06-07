@@ -14,3 +14,6 @@ assets/dist/
 
 # VSCode Plugin
 .history
+
+# Logs
+debug.log

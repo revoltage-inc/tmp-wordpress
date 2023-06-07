@@ -17,7 +17,9 @@
     "assets/dist/": true,
     "package.json": true,
     ".npm/": true,
-    "package-lock.json": true
+    "package-lock.json": true,
+    "pnpm-lock.yaml": true,
+    "CHANGELOG.md": true
   },
   "[html]": {
     "editor.tabSize": 2,

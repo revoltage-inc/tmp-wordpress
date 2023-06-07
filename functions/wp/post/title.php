@@ -14,7 +14,7 @@ add_filter('document_title_separator', function ($separator) {
 });
 
 // Disable automatic insert of p-tag and br-tag
-// remove_filter('the_title', 'wpautop');
+remove_filter('the_title', 'wpautop');
 
 // Disable automatic convert of symbols, etc
 remove_filter('the_title', 'wptexturize');

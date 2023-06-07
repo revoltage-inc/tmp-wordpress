@@ -17,35 +17,35 @@ add_action('wp_enqueue_scripts', function () {
   );
   wp_enqueue_style(
     'lib-tailwind',
-    get_theme_file_uri('/assets/dist/css/lib/tailwind.css'),
+    get_theme_file_uri('/assets/dist/css/libs/tailwind.css'),
     [],
     date_i18n(
       'YmdHis',
-      filemtime(get_theme_file_path('/assets/dist/css/lib/tailwind.css'))
+      filemtime(get_theme_file_path('/assets/dist/css/libs/tailwind.css'))
     ),
   );
 
   // Top page
-  if (is_front_page()) {
-    wp_enqueue_style(
-      'lib-swiper',
-      get_theme_file_uri('/assets/dist/css/lib/swiper.css'),
-      [],
-      date_i18n(
-        'YmdHis',
-        filemtime(get_theme_file_path('/assets/dist/css/lib/swiper.css'))
-      )
-    );
-    // wp_enqueue_style(
-    //   'page-top',
-    //   get_theme_file_uri('/assets/dist/css/page/top.css'),
-    //   [],
-    //   date_i18n(
-    //     'YmdHis',
-    //     filemtime(get_theme_file_path('/assets/dist/css/page/top.css'))
-    //   )
-    // );
-  }
+  // if (is_front_page()) {
+  //   wp_enqueue_style(
+  //     'page-top',
+  //     get_theme_file_uri('/assets/dist/css/page/top.css'),
+  //     [],
+  //     date_i18n(
+  //       'YmdHis',
+  //       filemtime(get_theme_file_path('/assets/dist/css/page/top.css'))
+  //     )
+  //   );
+  //   wp_enqueue_style(
+  //     'lib-swiper',
+  //     get_theme_file_uri('/assets/dist/css/libs/swiper.css'),
+  //     [],
+  //     date_i18n(
+  //       'YmdHis',
+  //       filemtime(get_theme_file_path('/assets/dist/css/libs/swiper.css'))
+  //     )
+  //   );
+  // }
 });
 
 // Admin login page

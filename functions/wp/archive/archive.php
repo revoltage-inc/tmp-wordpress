@@ -31,6 +31,8 @@ add_action('pre_get_posts', function ($query) {
     return;
   }
 
+  $query->set('post_status', 'publish');
+
   if ($query->is_post_type_archive('blog')) {
     $query->set('posts_per_page', '6');
     return;

@@ -13,4 +13,4 @@ assets/dist/
 .history/
 
 # TailwindCSS
-assets/src/css/lib/tailwind.css
+assets/src/css/libs/tailwind.css

@@ -15,7 +15,7 @@ add_filter('excerpt_more', function () {
 });
 
 // Disable automatic insert of p-tag and br-tag
-// remove_filter('the_excerpt', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 
 // Disable automatic convert of symbols, etc
 remove_filter('the_excerpt', 'wptexturize');

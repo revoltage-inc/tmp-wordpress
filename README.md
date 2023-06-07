@@ -15,14 +15,12 @@
 
 ## 設定
 
-## 設定
-
 ### 実行環境の作成
 
 下記のコマンドで実行環境を作成する。  
 
 ```zsh
-volta install node@18.16.0 npm@9.5.1 pnpm@8.2.0
+volta install node@18.16.0 npm@9.5.1 pnpm@8.6.0
 
 pnpm install
 ```

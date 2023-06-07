@@ -5,6 +5,10 @@ import colors from 'tailwindcss/colors'
 export default {
   content: ['{index,header,footer,404}.php', '{pages,components,singles,archives}/**/*.php'],
   theme: {
+    fontFamily: {
+      'noto-sans-jp': ['noto-sans-jp', 'sans-serif'],
+      'yu-gothic': ['yu-gothic', 'sans-serif'],
+    },
     colors: {
       transparent: colors.transparent,
       current: colors.current,

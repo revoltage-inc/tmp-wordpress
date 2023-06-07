@@ -13,7 +13,6 @@ assets/dist/
 .history/
 
 # Assets
-assets/src/css/lib/tailwind.css
-assets/src/js/lib/modernizr.js
-assets/src/js/lib/swiper.js
-assets/src/js/lib/yubinbango.js
+assets/src/css/libs/tailwind.css
+assets/src/js/libs/modernizr.js
+assets/src/js/libs/yubinbango.js
