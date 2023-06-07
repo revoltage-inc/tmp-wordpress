@@ -15,5 +15,4 @@ assets/dist/
 # Assets
 assets/src/css/libs/tailwind.css
 assets/src/js/libs/modernizr.js
-assets/src/js/libs/swiper.js
 assets/src/js/libs/yubinbango.js
